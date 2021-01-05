@@ -32,7 +32,20 @@ const employees = [
 ];
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
+$(document).ready(readyNow);
+function readyNow() {
+    console.log('jQuerry & js linked');
 
+ 
+  $('#run').on('click', onClick);
+}
+// function onClick(){
+// //  bonusObject.append($('#list'))
+// let newObject = bonusObject;
+// //  let el = $("#list")
+// //  el.append(`<li>` + bonusObject + `</li>`)
+
+function onClick(){
 for (let i = 0; i < employees.length; i++) {
   // pull out one employee
   let employee = employees[i];
@@ -40,7 +53,7 @@ for (let i = 0; i < employees.length; i++) {
   let employeeBonus = bonusCalc(employee);
   console.log(employeeBonus);
 }
-
+}
 function bonusCalc(employee) {
   let bonusObject = {
     name: employee.name,
@@ -73,8 +86,17 @@ function bonusCalc(employee) {
   }
   bonusObject.totalBonus = Number(employee.annualSalary * bonusObject.bonusPercentage);
   bonusObject.totalCompensation = Number(employee.annualSalary) + Number(bonusObject.totalBonus);
+  
   return bonusObject;
 }
+
+
+
+
+
+
+
+
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.

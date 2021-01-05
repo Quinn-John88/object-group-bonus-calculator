@@ -43,7 +43,7 @@ Write a declared function that takes in one **Employee** object (as an argument 
 * The `totalCompensation` property should be the adjusted annual compensation (base annual + bonus)
 * The `totalBonus` should be the employee's total bonus rounded to the nearest dollar.
 
-### Individual Bonus calculation
+### Individual Bonus calculation //DONE
 
 The bonus calculation is a simple number based on the below rules. Don't overthink it. 
 
