@@ -58,53 +58,23 @@ function bonusCalc(employee) {
     bonusObject.bonusPercentage = 0.1;
   }
 
+  if (employee.annualSalary > 65000){
+    bonusObject.bonusPercentage -= 0.01;
+  }
+
   if(employee.employeeNumber.length === 4){
     bonusObject.bonusPercentage += 0.05;
   }
+  
   if(bonusObject.bonusPercentage > 0.13){
     bonusObject.bonusPercentage = 0.13;
   } else if (bonusObject.bonusPercentage < 0){
     bonusObject.bonusPercentage = .00;
   }
-  // I THINK ITS FIXED!!!!!!!!!!!!!!!
-
-
-  // TODO: if > 65k, subtract 1%
-  // TODO: make sure no greater than 13%, no less than 0%
-  
-  // TODO: Figure out what the bonusPercentage, totalCompenation, and totalBonus should be
   bonusObject.totalBonus = Number(employee.annualSalary * bonusObject.bonusPercentage);
   bonusObject.totalCompensation = Number(employee.annualSalary) + Number(bonusObject.totalBonus);
   return bonusObject;
 }
-
-
-
-
-
-
-
-// const obj = Object.fromEntries(employees);
-
-// console.log(obj);
-
-
-//let result = employees.map(({reviewRating}) => reviewRating )
-
-
-//console.log(result);
-
-
-
-
-
-// employeeLoop(employees[1])
-
-
-
-
-
-
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
