@@ -32,13 +32,37 @@ const employees = [
 ];
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
-function employeeLoop(employees){
-  for (let i=0; i<employees.length; i++){
-    console.log(employees[i]);
-  }
+
+for (let i = 0; i < employees.length; i++) {
+  // pull out one employee
+  let employee = employees[i];
+  // pass it into a bonus calculator function
+  let employeeBonus = bonusCalc(employee);
+  console.log(employeeBonus);
 }
 
-employeeLoop(employees);
+function bonusCalc(employee) {
+  let bonusObject = {
+    name: employee.name,
+    bonusPercentage: 0,
+    totalCompensation: 0,
+    totalBonus: 0,
+  }
+  if(employee.reviewRating <= 2) {
+    bonusObject.bonusPercentage = 0;
+  } else if (employee.reviewRating === 3){
+    bonusObject.bonusPercentage = 0.04;
+  }  // TODO: Rating of 4 and 5
+
+  // TODO: if 4-digits, add 5%
+  // TODO: if > 65k, subtract 1%
+  // TODO: make sure no greater than 13%, no less than 0%
+  
+  // TODO: Figure out what the bonusPercentage, totalCompenation, and totalBonus should be
+  bonusObject.totalBonus = Number(employee.annualSalary * bonusObject.bonusPercentage);
+  bonusObject.totalCompensation = Number(employee.annualSalary) + Number(bonusObject.totalBonus);
+  return bonusObject;
+}
 
 
 
@@ -46,9 +70,21 @@ employeeLoop(employees);
 
 
 
+// const obj = Object.fromEntries(employees);
+
+// console.log(obj);
+
+
+//let result = employees.map(({reviewRating}) => reviewRating )
+
+
+//console.log(result);
 
 
 
+
+
+// employeeLoop(employees[1])
 
 
 
