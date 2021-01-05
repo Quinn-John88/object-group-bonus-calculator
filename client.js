@@ -52,9 +52,23 @@ function bonusCalc(employee) {
     bonusObject.bonusPercentage = 0;
   } else if (employee.reviewRating === 3){
     bonusObject.bonusPercentage = 0.04;
-  }  // TODO: Rating of 4 and 5
+  } else if (employee.reviewRating === 4){
+    bonusObject.bonusPercentage = 0.06;
+  } else if (employee.reviewRating === 5){
+    bonusObject.bonusPercentage = 0.1;
+  }
 
-  // TODO: if 4-digits, add 5%
+  if(employee.employeeNumber.length === 4){
+    bonusObject.bonusPercentage += 0.05;
+  }
+  if(bonusObject.bonusPercentage > 0.13){
+    bonusObject.bonusPercentage = 0.13;
+  } else if (bonusObject.bonusPercentage < 0){
+    bonusObject.bonusPercentage = .00;
+  }
+  // I THINK ITS FIXED!!!!!!!!!!!!!!!
+
+
   // TODO: if > 65k, subtract 1%
   // TODO: make sure no greater than 13%, no less than 0%
   
