@@ -30,8 +30,31 @@ const employees = [
     reviewRating: 1
   }
 ];
-
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
+
+function employeeLoop(employees){
+  for (let i=0; i<employees.length; i++){
+    console.log(employees[i]);
+  }
+}
+
+employeeLoop(employees);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
 // This problem is massive! Break the problem down. Use the debugger.
@@ -40,4 +63,3 @@ const employees = [
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
-console.log( employees );
