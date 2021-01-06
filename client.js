@@ -32,28 +32,37 @@ const employees = [
 ];
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
-$(document).ready(readyNow);
-function readyNow() {
-    console.log('jQuerry & js linked');
+// $(document).ready(readyNow);
+// function readyNow() {
+//     console.log('jQuerry & js linked');
 
  
-  $('#run').on('click', onClick);
-}
+//   $('#run').on('click', onClick);
+// }
 // function onClick(){
 // //  bonusObject.append($('#list'))
 // let newObject = bonusObject;
 // //  let el = $("#list")
 // //  el.append(`<li>` + bonusObject + `</li>`)
 
-function onClick(){
+
+//function onClick(){
+
 for (let i = 0; i < employees.length; i++) {
-  // pull out one employee
+  // pull out one employee{}
+  console.log(employees[i]);
   let employee = employees[i];
   // pass it into a bonus calculator function
   let employeeBonus = bonusCalc(employee);
   console.log(employeeBonus);
 }
-}
+
+  //let el = $("#list");
+  //el.append(`<li>` + `${bonusObject1.name}` + `</li>`);
+
+//${bonusObject.whateverPropertyYouWantToDisplay} and probably a label.
+
+//let bonusObject1 = 0
 function bonusCalc(employee) {
   let bonusObject = {
     name: employee.name,
@@ -61,6 +70,7 @@ function bonusCalc(employee) {
     totalCompensation: 0,
     totalBonus: 0,
   }
+  //bonusObject1 = bonusObject;
   if(employee.reviewRating <= 2) {
     bonusObject.bonusPercentage = 0;
   } else if (employee.reviewRating === 3){
@@ -90,9 +100,7 @@ function bonusCalc(employee) {
   return bonusObject;
 }
 
-
-
-
+//console.log(bonusObject1);
 
 
 
@@ -105,3 +113,4 @@ function bonusCalc(employee) {
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
 
+//$(`#tileList`).append
